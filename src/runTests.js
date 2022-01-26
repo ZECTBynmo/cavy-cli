@@ -137,6 +137,7 @@ function runTests(command, file, skipbuild, dev, outputAsXml, bootTimeout, args)
     runServer({ command, dev, outputAsXml, skipbuild, bootTimeout });
   } else {
     // Build the app, start the test server and wait for results.
+    runServer({ command, dev, outputAsXml, skipbuild, bootTimeout });
     console.log(`cavy: Running \`npx react-native ${command}\`...`);
 
     let rn = spawn('npx', ['react-native', command, ...args], {
@@ -151,7 +152,6 @@ function runTests(command, file, skipbuild, dev, outputAsXml, bootTimeout, args)
       if (code) {
         return process.exit(code);
       }
-      runServer({ command, dev, outputAsXml, skipbuild, bootTimeout });
     });
   }
 }
