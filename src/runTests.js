@@ -94,6 +94,7 @@ function runServer({ command, dev, outputAsXml, skipbuild, bootTimeout }) {
 // bootTimeout: how long the CLI should wait for the RN app to boot.
 // args: any extra arguments the user would usually to pass to `react native run...`
 function runTests(command, file, skipbuild, dev, outputAsXml, bootTimeout, args) {
+  console.log("<<<<<<<<<<<< RUNNING SERVER!!!!! <<<<<<<<<<<<<<<<<<<<", dev, skipbuild, bootTimeout, command)
 
   // Assume entry file is 'index.js' if user doesn't supply one.
   const entryFile = file || 'index.js';
