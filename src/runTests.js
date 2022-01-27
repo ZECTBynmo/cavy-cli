@@ -149,10 +149,7 @@ function runTests(command, file, skipbuild, dev, outputAsXml, bootTimeout, args)
     // Wait for the app to build first...
     rn.on('close', (code) => {
       console.log(`cavy: react-native exited with code ${code}.`);
-      // ... quit if something went wrong.
-      if (code) {
-        return process.exit(code);
-      }
+      return process.exit(code);
     });
   }
 }
